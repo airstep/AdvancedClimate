@@ -80,13 +80,9 @@ public class ACWallpaperService extends WallpaperService
         public void onVisibilityChanged(boolean visible)
         {
             this.visible = visible;
-            // if screen wallpaper is visible then draw the image
-            if (visible)
-            {
+            if (visible) {
                 handler.post(drawRunner);
-            }
-            else // otherwise do not draw
-            {
+            } else {
                 handler.removeCallbacks(drawRunner);
             }
         }
